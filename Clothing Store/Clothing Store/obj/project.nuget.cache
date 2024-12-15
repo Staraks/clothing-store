@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "9qh9SfsfLRn8qB1khtdySdcz8ILczb1EeqIYpCo/dHW7AXyJsgW8GKvD+IOt7bYG8uYajG0DsUc8wIWwYlmSBA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user\\source\\repos\\Clothing Store\\Clothing Store\\Clothing Store.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\npgsql\\9.0.2\\npgsql.9.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
