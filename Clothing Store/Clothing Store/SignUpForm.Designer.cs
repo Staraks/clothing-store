@@ -45,9 +45,9 @@
             lblName.AutoSize = true;
             lblName.Location = new Point(374, 24);
             lblName.Name = "lblName";
-            lblName.Size = new Size(49, 20);
+            lblName.Size = new Size(39, 20);
             lblName.TabIndex = 0;
-            lblName.Text = "Name";
+            lblName.Text = "Имя";
             // 
             // lblEmail
             // 
@@ -63,18 +63,18 @@
             lblPhoneNumber.AutoSize = true;
             lblPhoneNumber.Location = new Point(346, 186);
             lblPhoneNumber.Name = "lblPhoneNumber";
-            lblPhoneNumber.Size = new Size(108, 20);
+            lblPhoneNumber.Size = new Size(127, 20);
             lblPhoneNumber.TabIndex = 2;
-            lblPhoneNumber.Text = "Phone Number";
+            lblPhoneNumber.Text = "Номер телефона";
             // 
             // lblPassword
             // 
             lblPassword.AutoSize = true;
             lblPassword.Location = new Point(363, 261);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(70, 20);
+            lblPassword.Size = new Size(62, 20);
             lblPassword.TabIndex = 3;
-            lblPassword.Text = "Password";
+            lblPassword.Text = "Пароль";
             // 
             // lblErrorMessage
             // 
@@ -82,9 +82,8 @@
             lblErrorMessage.ForeColor = Color.Red;
             lblErrorMessage.Location = new Point(337, 395);
             lblErrorMessage.Name = "lblErrorMessage";
-            lblErrorMessage.Size = new Size(50, 20);
+            lblErrorMessage.Size = new Size(0, 20);
             lblErrorMessage.TabIndex = 4;
-            lblErrorMessage.Text = "label5";
             // 
             // txtName
             // 
@@ -116,11 +115,11 @@
             // 
             // btnRegister
             // 
-            btnRegister.Location = new Point(337, 327);
+            btnRegister.Location = new Point(323, 328);
             btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(121, 55);
+            btnRegister.Size = new Size(159, 55);
             btnRegister.TabIndex = 9;
-            btnRegister.Text = "Register";
+            btnRegister.Text = "Зарегестрироваться";
             btnRegister.UseVisualStyleBackColor = true;
             btnRegister.Click += btnRegister_Click;
             // 
@@ -140,7 +139,7 @@
             Controls.Add(lblEmail);
             Controls.Add(lblName);
             Name = "SignUpForm";
-            Text = "SignUpForm";
+            Text = "Регистрация";
             ResumeLayout(false);
             PerformLayout();
         }

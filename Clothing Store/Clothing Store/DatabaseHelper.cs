@@ -62,7 +62,7 @@ namespace Clothing_Store
                     {
                         command.Parameters.AddRange(parameters);
                     }
-                    return command.ExecuteScalar(); // Возвращает единственное значение
+                    return command.ExecuteScalar(); 
                 }
             }
         }

@@ -10,6 +10,8 @@ namespace Clothing_Store
 {
     public partial class LoginForm : Form
     {
+        public int? UserId { get; private set; }
+
         public LoginForm()
         {
             InitializeComponent();
@@ -22,18 +24,16 @@ namespace Clothing_Store
 
             if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
             {
-                lblErrorMessage.Text = "Please enter both email and password.";
+                lblErrorMessage.Text = "Пожалуйста, введите адрес электронной почты и пароль.";
                 lblErrorMessage.ForeColor = Color.Red;
                 return;
             }
 
             try
             {
-                // Хэширование пароля
                 string hashedPassword = ComputeSha256Hash(password);
 
-                // Запрос к базе данных для проверки пользователя
-                string query = "SELECT \"role\" FROM \"user\" WHERE email = @Email AND password_hash = @PasswordHash";
+                string query = "SELECT id, role FROM \"user\" WHERE email = @Email AND password_hash = @PasswordHash";
 
                 var parameters = new NpgsqlParameter[]
                 {
@@ -45,58 +45,42 @@ namespace Clothing_Store
 
                 if (result.Rows.Count > 0)
                 {
-                    // Авторизация успешна
-                    DataRow user = result.Rows[0];
-                    string role = user["role"].ToString();
-
-                    lblErrorMessage.Text = "Login successful!";
-                    lblErrorMessage.ForeColor = Color.Green;
+                    UserId = Convert.ToInt32(result.Rows[0]["id"]);
+                    string role = result.Rows[0]["role"].ToString();
 
                     if (role == "admin")
                     {
-                        // Переход в админскую часть
+                        // Открываем AdminForm
                         AdminForm adminForm = new AdminForm();
-                        adminForm.Show();
+                        this.Hide();
+                        adminForm.ShowDialog();
+                        this.Show();
                     }
                     else
                     {
-                        // Переход в обычную часть
-                        MainForm mainForm = new MainForm();
-                        mainForm.Show();
+                        // Обычный пользователь
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
                     }
-
-                    // Скрываем текущую форму
-                    this.Hide();
                 }
                 else
                 {
-                    // Неправильный email или пароль
-                    lblErrorMessage.Text = "Invalid email or password!";
+                    lblErrorMessage.Text = "Неверный адрес электронной почты или пароль!";
                     lblErrorMessage.ForeColor = Color.Red;
                 }
             }
             catch (Exception ex)
             {
-                lblErrorMessage.Text = "Error: " + ex.Message;
+                lblErrorMessage.Text = "Ошибка: " + ex.Message;
                 lblErrorMessage.ForeColor = Color.Red;
             }
-        }
-
-        private void btnSignUp_Click(object sender, EventArgs e)
-        {
-            // Открыть форму регистрации
-            SignUpForm signUpForm = new SignUpForm();
-            signUpForm.ShowDialog(); // Используем ShowDialog, чтобы форма открылась как модальное окно
         }
 
         private string ComputeSha256Hash(string rawData)
         {
             using (SHA256 sha256Hash = SHA256.Create())
             {
-                // Вычисляем хэш
                 byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
-
-                // Преобразуем байты в строку
                 StringBuilder builder = new StringBuilder();
                 for (int i = 0; i < bytes.Length; i++)
                 {
@@ -107,5 +91,7 @@ namespace Clothing_Store
         }
     }
 }
+
+
 
 

@@ -33,14 +33,13 @@
             lblPassword = new Label();
             txtPassword = new TextBox();
             btnLogin = new Button();
-            btnSignUp = new Button();
             lblErrorMessage = new Label();
             SuspendLayout();
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(392, 103);
+            lblEmail.Location = new Point(395, 103);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(46, 20);
             lblEmail.TabIndex = 0;
@@ -50,7 +49,7 @@
             // 
             txtEmail.Location = new Point(313, 126);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(194, 27);
+            txtEmail.Size = new Size(201, 27);
             txtEmail.TabIndex = 1;
             // 
             // lblPassword
@@ -58,37 +57,27 @@
             lblPassword.AutoSize = true;
             lblPassword.Location = new Point(379, 184);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(70, 20);
+            lblPassword.Size = new Size(62, 20);
             lblPassword.TabIndex = 2;
-            lblPassword.Text = "Password";
+            lblPassword.Text = "Пароль";
             // 
             // txtPassword
             // 
             txtPassword.Location = new Point(313, 207);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(194, 27);
+            txtPassword.Size = new Size(201, 27);
             txtPassword.TabIndex = 3;
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(352, 259);
+            btnLogin.Location = new Point(356, 253);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(121, 47);
             btnLogin.TabIndex = 4;
-            btnLogin.Text = "Login";
+            btnLogin.Text = "Войти";
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;
-            // 
-            // btnSignUp
-            // 
-            btnSignUp.Location = new Point(667, 391);
-            btnSignUp.Name = "btnSignUp";
-            btnSignUp.Size = new Size(121, 47);
-            btnSignUp.TabIndex = 5;
-            btnSignUp.Text = "Sign Up";
-            btnSignUp.UseVisualStyleBackColor = true;
-            btnSignUp.Click += btnSignUp_Click;
             // 
             // lblErrorMessage
             // 
@@ -96,9 +85,8 @@
             lblErrorMessage.ForeColor = Color.Red;
             lblErrorMessage.Location = new Point(265, 324);
             lblErrorMessage.Name = "lblErrorMessage";
-            lblErrorMessage.Size = new Size(50, 20);
+            lblErrorMessage.Size = new Size(0, 20);
             lblErrorMessage.TabIndex = 6;
-            lblErrorMessage.Text = "label1";
             // 
             // LoginForm
             // 
@@ -106,7 +94,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(lblErrorMessage);
-            Controls.Add(btnSignUp);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
             Controls.Add(lblPassword);
@@ -115,7 +102,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Login";
+            Text = "Вход";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -127,7 +114,6 @@
         private Label lblPassword;
         private TextBox txtPassword;
         private Button btnLogin;
-        private Button btnSignUp;
         private Label lblErrorMessage;
     }
 }

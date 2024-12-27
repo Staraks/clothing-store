@@ -26,7 +26,7 @@ namespace Clothing_Store
             if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email) ||
                 string.IsNullOrWhiteSpace(phoneNumber) || string.IsNullOrWhiteSpace(password))
             {
-                MessageBox.Show("All fields must be filled in.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Все поля должны быть заполнены.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -46,7 +46,7 @@ namespace Clothing_Store
 
                         if (userExists > 0)
                         {
-                            MessageBox.Show("User with this email already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Пользователь с таким адресом электронной почты уже существует!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
                     }
@@ -65,14 +65,14 @@ namespace Clothing_Store
                         command.Parameters.AddWithValue("@Role", "Customer");
 
                         command.ExecuteNonQuery();
-                        MessageBox.Show("Registration successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close(); // Закрыть форму
+                        MessageBox.Show("Регистрация прошла успешно!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close(); 
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error during registration: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ошибка во время регистрации: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
